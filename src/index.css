@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 212 72% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -94,8 +97,94 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl font-semibold md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold md:text-3xl;
+  }
+
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply container max-w-5xl px-4 md:px-6;
+  }
+  
+  .btn-primary {
+    @apply inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-outline {
+    @apply inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-base font-medium text-foreground ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .section-heading {
+    @apply mb-12 text-center;
+  }
+  
+  .section-title {
+    @apply mb-3 text-3xl font-semibold md:text-4xl;
+  }
+  
+  .section-subtitle {
+    @apply max-w-2xl mx-auto text-muted-foreground;
+  }
+  
+  .navbar-link {
+    @apply relative px-3 py-2 text-foreground/80 transition-colors hover:text-foreground;
+  }
+  
+  .navbar-link::after {
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 content-[''];
+  }
+  
+  .navbar-link:hover::after {
+    @apply w-full;
+  }
+  
+  .navbar-link.active {
+    @apply text-foreground;
+  }
+  
+  .navbar-link.active::after {
+    @apply w-full;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+  
+  .glass-panel {
+    @apply rounded-2xl bg-white/80 backdrop-blur-md shadow-xl border border-white/20;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .image-frame {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:border-4 before:border-white/10 before:z-10;
   }
 }
