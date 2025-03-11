@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, GitHub, Mail, Phone } from 'lucide-react';
+import { Linkedin, Github, Mail, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +34,7 @@ export const Footer: React.FC = () => {
                 className="text-gray-600 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
-                <GitHub size={20} />
+                <Github size={20} />
               </a>
               <a 
                 href="mailto:contact@example.com" 
