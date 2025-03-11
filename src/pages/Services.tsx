@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout';
 import { ServicesSection } from '../components/ServicesSection';
 import { Check } from 'lucide-react';
 import { AnimatedText } from '../components/AnimatedText';
+import { AnimatedImage } from '../components/AnimatedImage';
 
 const Services = () => {
   const processSteps = [
